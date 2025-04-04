@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto E Ride</title>
+    <style>
+        body {
+            margin:0;
+                padding:0;
+                background-image:url(background.jpeg);
+                background-size:cover;
+           
+        }
+        .container {
+            top:50%;
+                left:50%;
+                position: absolute;
+                transform:translate(-50%,-50%);
+            
+        }
+        .card{
+            padding:60px 40px 40px;
+                background:rgba(218, 140, 39, 0.214);
+                border-radius:10px;
+        }
+        
+        input {
+            width:200px;
+                border:none;
+                background:transparent;
+                border-bottom:1px solid rgb(0, 0, 0);
+                padding:6px;
+                margin-bottom:20px;
+                color:rgb(14, 13, 13);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background:rgba(30, 143, 255, 0.701) ;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background:rgba(174, 139, 139, 0.59) ;
+        }
+        img{
+                border-radius:50%;
+                position:absolute;
+                margin-left:115px;
+                margin-top:-40px;
+                transform-style: initial;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="user.png"height="70" width="70">
+        <div class="card">
+            <input type="text" name="fullname" placeholder="Full Name" required><br>
+            <input type="Email or Number" name="Email or Number" placeholder="Email or Number" required><br>
+            <input type="OTP" name="OTP" placeholder="OTP"><br> 
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
+            <a href="file:///C:/Users/Rajendran/Desktop/Project/Register.html">
+                <button id="button">Create</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Moto E Ride</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /* Signature font */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      overflow: hidden;
+    }
+
+    #bgVideo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      font-weight: 600;
+      color: rgba(50, 30, 30, 0.85);
+      position: absolute;
+      top: 100px;
+      opacity: 0;
+      transition: opacity 1s ease, top 1s ease;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .header.show {
+      opacity: 1;
+    }
+
+    .right-buttons,
+    .social-icons {
+      display: none;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.6); /* Transparent background */
+      color: white;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 1);
+      transform: translateY(-3px);
+    }
+
+    .right-buttons {
+      position: absolute;
+      top: 45%;
+      right: 50px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .social-icons {
+      position: absolute;
+      bottom: 30px;
+      display: flex;
+      gap: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards 2.5s;
+    }
+
+    .social-icons img {
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      filter: drop-shadow(1px 1px 3px black);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.8));
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted id="bgVideo">
+    <source src="Copy of Moto.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="overlay">
+    <div class="header" id="welcomeText">Welcome to Moto E Ride</div>
+
+    <div class="right-buttons" id="buttons">
+      <button class="btn" onclick="window.location.href='Dev.html'">Login</button>
+      <button class="btn" onclick="window.location.href='Register.html'">Book a Ride</button>
+    </div>
+
+    <div class="social-icons" id="socials">
+      <a href="https://wa.me/919487995001" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/santho126_" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+    </div>
+  </div>
+
+  <!-- Script to speed up and pause video at 2.5s -->
+  <script>
+    const video = document.getElementById('bgVideo');
+    const header = document.getElementById('welcomeText');
+    const buttons = document.getElementById('buttons');
+    const socials = document.getElementById('socials');
+
+    video.playbackRate = 2.0; // Speed up video playback
+
+    video.addEventListener('timeupdate', () => {
+      if (video.currentTime >= 2.5) {
+        video.pause();
+        header.classList.add('show');
+        buttons.style.display = 'flex';
+        socials.style.display = 'flex';
+      }
+    });
+  </script>
+
+</body>
+</html>
